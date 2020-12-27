@@ -2,15 +2,18 @@
   <div>
     <b-container>
       <b-row class="justify-content-md-center mt-5">
-        <b-col md="8">
-          <h1>Welcome To Blockchain Real Estate.</h1>
+        <b-col md="3">
+         <b-button to="/admin/changeAdmin"  pill variant="primary">
+            Change Admin
+          </b-button>                   
+          </b-col >
+            <b-col md="3">
+            <b-button to="/admin/addProperty" pill variant="primary">
+            Add Property
+          </b-button>
         </b-col>
       </b-row>
-      <b-row class="mt-5 justify-content-md-center">
-        <b-col md="4" cl>
-          <p>Decentralized Property Exchange Platform</p>
-        </b-col>
-      </b-row>
+      
     </b-container>
   </div>
 </template>

@@ -7,7 +7,11 @@
 
       <b-collapse id="nav-text-collapse" is-nav>
         <b-navbar-nav class="ml-auto">
-          <b-nav-text><b-link to="/explore"> Explore</b-link> </b-nav-text>
+          <b-nav-text><b-link to="/explore"> Explore </b-link> </b-nav-text>
+          <b-nav-text><b-link to="/admin"> &nbsp; admin </b-link> </b-nav-text>
+          <b-nav-text v-if="isLoggedin"
+            ><b-link @click="logout"> &nbsp; Logout</b-link>
+          </b-nav-text>
         </b-navbar-nav>
       </b-collapse>
     </b-navbar>
@@ -16,7 +20,19 @@
 </template>
 
 <script>
-export default {};
+import { mapState } from "vuex";
+export default {
+  computed: {
+    ...mapState(["isLoggedin"]),
+  },
+  methods: {
+    logout: function () {
+      this.$portis.logout();
+      this.$store.commit("set_logging", false);
+      this.$store.commit("set_addredd", "");
+    },
+  },
+};
 </script>
 
 <style>

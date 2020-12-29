@@ -20,30 +20,6 @@ import { mapState } from "vuex";
 
 export default {
   layout: "main",
-  computed: {
-    ...mapState(["isLoggedin", "ethaddress"]),
-  },
-
-  mounted() {
-    this.$web3.eth.getAccounts((error, accounts) => {
-      console.log("logging accounts data");
-      this.$store.commit("set_logging", true);
-      this.$store.commit("set_addredd", accounts[0]);
-      console.log("redirecting");
-      window.$nuxt.$router.push("/admin/youyou");
-      console.log("redirected");
-    }),
-      this.$portis.onLogin((walletAddress, email, reputation) => {
-        console.log("logging login daata");
-        console.log(walletAddress, email, reputation);
-      });
-  },
-  methods: {
-    checklogin() {
-      if (this.$store.state.isLoggedin) {
-      }
-    },
-  },
 };
 </script>
 

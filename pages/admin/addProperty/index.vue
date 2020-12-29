@@ -44,12 +44,8 @@
               ></b-form-textarea>
             </b-form-group>
 
-            <b-form-group
-              id="price"
-              label="Price (₹)"
-              label-for="price"
-            >
-              <b-form-input 
+            <b-form-group id="price" label="Price (₹)" label-for="price">
+              <b-form-input
                 id="price"
                 v-model="form.price"
                 placeholder="Enter Property Price"
@@ -68,6 +64,7 @@
 <script>
 export default {
   layout: "main",
+  middleware: "authenticated",
   data() {
     return {
       form: {

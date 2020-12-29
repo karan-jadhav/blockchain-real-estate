@@ -24,29 +24,5 @@
 export default {
   layout: "main",
   middleware: "authenticated",
-
-  data() {
-    return {
-      msg: "Admin Page",
-    };
-  },
-  methods: {
-    logout: function () {
-      this.$portis.logout();
-    },
-  },
-  mounted() {
-    this.$web3.eth.getAccounts((error, accounts) => {
-      console.log("logging accounts data");
-      console.log(accounts);
-    }),
-      this.$portis.onLogin((walletAddress, email, reputation) => {
-        console.log("logging login daata");
-        console.log(walletAddress, email, reputation);
-      }),
-      this.$portis.onLogout(() => {
-        console.log("user logged out");
-      });
-  },
 };
 </script>

@@ -20,7 +20,7 @@
 
 <script>
 export default {
-    layout: 'main',
+  layout: "main",
 };
 </script>
 

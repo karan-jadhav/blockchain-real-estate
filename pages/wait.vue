@@ -20,6 +20,8 @@ export default {
       console.log("logging accounts data");
       this.$store.commit("set_logging", true);
       this.$store.commit("set_addredd", accounts[0]);
+      this.$cookie.set("IsLoggin",true);
+      this.$cookie.set("ethadd",accounts[0]);
       window.$nuxt.$router.push("/admin/changeAdmin");
     });
   },

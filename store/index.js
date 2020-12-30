@@ -1,6 +1,6 @@
 export const state = () => ({
     isLoggedin: false,
-    ethaddress: "admineth"
+    ethaddress: ""
 })
 
 export const mutations = {

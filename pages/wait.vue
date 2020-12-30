@@ -12,17 +12,21 @@
 
 <script>
 import { mapState } from "vuex";
-
 export default {
   layout: "main",
   mounted() {
     this.$web3.eth.getAccounts((error, accounts) => {
       console.log("logging accounts data");
-      this.$store.commit("set_logging", true);
-      this.$store.commit("set_addredd", accounts[0]);
-      this.$cookie.set("IsLoggin",true);
-      this.$cookie.set("ethadd",accounts[0]);
-      window.$nuxt.$router.push("/admin/changeAdmin");
+      console.log(accounts[0]);
+
+      // this.$store.commit("set_logging", true);
+      // this.$store.commit("set_addredd", accounts[0]);
+
+      // this.$cookies.set("isLoggedin", true);
+      // this.$cookies.set("ethadd", accounts[0]);
+      this.$setcookie(true, accounts[0]);
+      console.log("redirectingggggggggg");
+      // window.$nuxt.$router.push("/admin/changeAdmin");
     });
   },
 };

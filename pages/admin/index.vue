@@ -11,9 +11,6 @@
           <b-button to="/admin/addProperty" pill variant="primary">
             Add Property
           </b-button>
-          <b-button v-on:click="logout" pill variant="secondary">
-            logout
-          </b-button>
         </b-col>
       </b-row>
     </b-container>
@@ -23,6 +20,5 @@
 <script>
 export default {
   layout: "main",
-  middleware: "authenticated",
 };
 </script>

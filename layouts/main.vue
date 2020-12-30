@@ -9,8 +9,8 @@
         <b-navbar-nav class="ml-auto">
           <b-nav-text><b-link to="/explore"> Explore </b-link> </b-nav-text>
           <b-nav-text><b-link to="/admin"> &nbsp; admin </b-link> </b-nav-text>
-          <b-nav-text v-if="isLoggedin"
-            ><b-link @click="logout"> &nbsp; Logout</b-link>
+          <b-nav-text
+            ><b-link> &nbsp; {{ ethaddress }} </b-link>
           </b-nav-text>
         </b-navbar-nav>
       </b-collapse>
@@ -23,14 +23,13 @@
 import { mapState } from "vuex";
 export default {
   computed: {
-    ...mapState(["isLoggedin"]),
+    ...mapState(["isLoggedin", "ethaddress"]),
   },
-  methods: {
-    logout: function () {
-      this.$portis.logout();
-      this.$store.commit("set_logging", false);
-      this.$store.commit("set_addredd", "");
-    },
+  mounted() {
+    this.$web3.eth.getAccounts((error, accounts) => {
+      this.$store.commit("set_logging", true);
+      this.$store.commit("set_addredd", accounts[0]);
+    });
   },
 };
 </script>

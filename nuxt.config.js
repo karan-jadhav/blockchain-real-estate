@@ -13,11 +13,13 @@ export default {
   },
 
   // Global CSS (https://go.nuxtjs.dev/config-css)
-  css: [
+  css: ['@/assets/main.css',
   ],
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
   plugins: [
+    { src: '~/plugins/web3.js' },
+    { src: '~/plugins/setcookies.js' }
   ],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)
@@ -26,7 +28,7 @@ export default {
   // Modules for dev and build (recommended) (https://go.nuxtjs.dev/config-modules)
   buildModules: [
     // https://go.nuxtjs.dev/eslint
-    '@nuxtjs/eslint-module'
+    // '@nuxtjs/eslint-module'
   ],
 
   // Modules (https://go.nuxtjs.dev/config-modules)
@@ -36,7 +38,9 @@ export default {
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
     // https://go.nuxtjs.dev/pwa
-    '@nuxtjs/pwa'
+    '@nuxtjs/pwa',
+
+    ['cookie-universal-nuxt', { alias: 'cookiz' }],
   ],
 
   // Axios module configuration (https://go.nuxtjs.dev/config-axios)

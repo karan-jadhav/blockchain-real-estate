@@ -3,7 +3,7 @@
     <div>
       <Logo />
       <h1 class="title">
-        blockchain-real-estate
+        Blockchain Real Estate
       </h1>
       <div class="links">
         <a
